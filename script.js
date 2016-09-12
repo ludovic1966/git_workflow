@@ -41,6 +41,61 @@ $('.prev').click(function(){ // image précédente
 
 });
 
+$carrousel.append('<div class="controls"> <span class="fleche_gauche"></span> <span class="fleche_droite"></span> </div>');
+
+$('.fleche_droite').click(function(){ // image suivante
+
+    i++; // on incrémente le compteur
+
+    if( i <= indexImg ){
+        $img.css('display', 'none'); // on cache les images
+        $currentImg = $img.eq(i); // on définit la nouvelle image
+        $currentImg.css('display', 'block'); // puis on l'affiche
+    }
+    else{
+        i = indexImg;
+    }
+
+});
+
+$('.fleche_gauche').click(function(){ // image précédente
+
+    i--; // on décrémente le compteur, puis on réalise la même chose que pour la fonction "suivante"
+
+    if( i >= 0 ){
+        $img.css('display', 'none');
+        $currentImg = $img.eq(i);
+        $currentImg.css('display', 'block');
+    }
+    else{
+        i = 0;
+    }
+
+});
+
+function slideImg(){
+    setTimeout(function(){ // on utilise une fonction anonyme
+                        
+        if(i < indexImg){ // si le compteur est inférieur au dernier index
+        i++; // on l'incrémente
+    }
+    else{ // sinon, on le remet à 0 (première image)
+        i = 0;
+    }
+
+    $img.css('display', 'none');
+
+    $currentImg = $img.eq(i);
+    $currentImg.css('display', 'block');
+
+    slideImg(); // on oublie pas de relancer la fonction à la fin
+
+    }, 3000); // on définit l'intervalle à 3000 millisecondes (3s)
+}
+
+slideImg(); // enfin, on lance la fonction une première fois
+
+});
 
 
 function slideImg(){

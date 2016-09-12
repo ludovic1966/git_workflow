@@ -47,3 +47,30 @@
     font-size: 16px;
 }
 
+.fleche_gauche {
+    position:absolute;
+    top:200;
+    left:0;
+
+    /*width: 0; 
+    height: 0; */
+  
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent; 
+     
+    border-right:25px solid blue; 
+
+}
+.fleche_droite {
+    position:absolute;
+    top:200;
+    right:0;
+
+    /*width: 0; 
+    height: 0; */
+    
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+     
+    border-left: 25px solid blue;
+}

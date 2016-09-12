@@ -1,0 +1,16 @@
+exercice git workflow
+
+git clone "git@github.com:ludovic1966/git_workflow.git"
+
+git init
+git add --all
+git status
+git commit -m "first commit"
+git remote add origingit@github.com:ludovic1966/git_workflow.git
+git push -u origin master
+
+git branch test1
+git checkout test&
+git add --all
+git commit -m "my changes"
+git push origin test1
